@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load ratings %}
+{% static '' as baseUrl %}
+{% block content %}
+<div class="well well-small">
+	<h3>Our {{ category.category_name }}</h3>
+	<div id="listservicecontent" class="row-fluid">
+		<ul class="thumbnails">
+			{% for profile in profiles %}
+				<li class="span4">
+					<div class="thumbnail">
+						<a href="/getdetail?profile_id={{profile.profile_id}}">
+                            <img src="{% static "events/assets/img/" %}{{profile.pic1}}" alt="">
+                        </a>
+						<div class="caption cntr">
+							<p>{{profile.profile_name}}</p>
+							<p>{{profile.price}}</p>
+							<div class="actionList">
+								{% ratings profile %}
+								<a class="pull-left" href="#">Counter: </a>
+							</div>
+						</div>
+					</div>
+				</li>
+			{% end for %}
+		</ul>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<ul class="breadcrumb">
+        <li><a href="/home">Home</a> <span class="divider">/</span></li>
+        <li class="active">Order Confirmation</li>
+    </ul>
+    <div style="Height: 325px; color:white; text-align: center">
+            <div>
+                <img src="{% static "events/assets/img/purchase.jpg" %}" alt="Thank you">
+                <h3>Thank you for shopping with us.</h3>
+                <h4>We’ll send a confirmation email soon.</h4>
+                <h4>We're processing your order now and we'll email you again when there are status updates.</h4>
+                <h4>You can also track the status via My Orders.</h4>
+                <h4>We hope to see you again soon.</h4>
+            </div>
+    </div>
+{% endblock %}
